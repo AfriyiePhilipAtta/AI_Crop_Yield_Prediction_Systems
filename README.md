@@ -56,12 +56,11 @@ This approach makes the system **robust, scalable, and usable in tropical and hi
 ---
 
 ## 🤖 Machine Learning
-  ```bash
-  - **Model:** XGBoost Regressor  
-  - **Features:** NDVI_mean, NDVI_max, VV, VH, rainfall, temp  
-  - **Target:** yield (t/ha)  
-  - **Validation:** 5-fold cross-validation
-```
+- **Model:** XGBoost Regressor  
+- **Features:** NDVI_mean, NDVI_max, VV, VH, rainfall, temp  
+- **Target:** yield (t/ha)  
+- **Validation:** 5-fold cross-validation
+
 
 ---
 
