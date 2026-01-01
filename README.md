@@ -1,8 +1,6 @@
 # 🌾 AI Crop Yield Prediction System  
 **Satellite‑Driven, Cloud‑Safe, Industry‑Ready Machine Learning for Yield Forecasting**
 
-![Dashboard](Screenshot%202026-01-01%20at%2014.40.43.png)
-
 This project is a full-stack, production-oriented machine learning system for crop yield prediction using satellite Earth observation data.  
 It combines **Sentinel‑2 optical imagery**, **Sentinel‑1 SAR**, **weather variables**, and **XGBoost regression** to deliver:
 
