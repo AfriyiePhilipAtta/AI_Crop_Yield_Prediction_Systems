@@ -94,10 +94,9 @@ This approach makes the system **robust, scalable, and usable in tropical and hi
 
 ## Setup environment
   ```bash
-  conda create -n crop_env python=3.10
-  conda activate crop_env
   chmod +x ./setup.sh
   ./setup.sh
+  conda activate crop_env
   ```
 
 ---
