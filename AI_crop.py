@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # ============================================================
-# AI CROP YIELD SYSTEM (FINAL – CLOUD‑SAFE, INDUSTRY‑GRADE)
+# AI CROP YIELD SYSTEM (OPTIMIZED FOR SMALL DATASETS)
 # Sentinel‑2 NDVI + Sentinel‑1 SAR FUSION + XGBoost
 # ============================================================
 
 # -----------------------------
-# 1. IMPORT LIBRARIES
+# IMPORT LIBRARIES
 # -----------------------------
 import os                   # File paths, directories
 import sys                  # System-level operations
@@ -18,11 +18,12 @@ import rasterio             # Reading/writing GeoTIFF raster files
 
 from xgboost import XGBRegressor                    # ML model
 from sklearn.model_selection import KFold, cross_val_score  # Cross-validation
+from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
 
 # -----------------------------
-# 0. LOGGING SETUP
+# LOGGING SETUP
 # -----------------------------
-# Logs messages to both console and a file "pipeline.log"
+# Logs messages to both console and a file "pipeline.log."
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s | %(levelname)s | %(message)s",
@@ -34,9 +35,9 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # -----------------------------
-# 1. PATHS
+# PATHS
 # -----------------------------
-# Base directory is where script is located
+# Base directory is where the script is located
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_DIR = os.path.join(BASE_DIR, "output")
 os.makedirs(OUTPUT_DIR, exist_ok=True)  # Create output folder if missing
@@ -50,7 +51,7 @@ YIELD_MAP_PATH = os.path.join(OUTPUT_DIR, "Yield_Map.tif")
 UNCERTAINTY_MAP_PATH = os.path.join(OUTPUT_DIR, "Yield_Uncertainty_Map.tif")
 
 # -----------------------------
-# 2. EARTH ENGINE INITIALIZATION
+# EARTH ENGINE INITIALIZATION
 # -----------------------------
 PROJECT_ID = "quiet-subset-447718-q0"
 try:
@@ -62,7 +63,7 @@ except Exception:
 logger.info("Earth Engine initialized")
 
 # -----------------------------
-# 3. AREA OF INTEREST (AOI)
+# AREA OF INTEREST (AOI)
 # -----------------------------
 # Define field/farm polygon using lat/lon coordinates
 AOI = ee.Geometry.Polygon([
@@ -78,7 +79,7 @@ AOI = ee.Geometry.Polygon([
 AOI_BUF = AOI.buffer(75)
 
 # -----------------------------
-# 4. SENTINEL-2 IMAGE COLLECTION
+# SENTINEL-2 IMAGE COLLECTION
 # -----------------------------
 s2 = (
     ee.ImageCollection("COPERNICUS/S2_SR_HARMONIZED")
@@ -89,7 +90,7 @@ s2 = (
 logger.info(f"Sentinel‑2 scenes found: {s2.size().getInfo()}")
 
 # -----------------------------
-# 4b. SENTINEL-1 SAR COLLECTION (CLOUD-RESILIENT)
+# SENTINEL-1 SAR COLLECTION (CLOUD-RESILIENT)
 # -----------------------------
 s1 = (
     ee.ImageCollection("COPERNICUS/S1_GRD")
@@ -104,7 +105,7 @@ s1 = (
 logger.info(f"Sentinel‑1 scenes found: {s1.size().getInfo()}")
 
 # -----------------------------
-# 5. NDVI CALCULATION FOR SENTINEL-2
+# NDVI CALCULATION FOR SENTINEL-2
 # -----------------------------
 def add_ndvi(img):
     """
@@ -123,7 +124,7 @@ def add_ndvi(img):
 s2_ndvi = s2.map(add_ndvi)  # Apply NDVI calculation to all images
 
 # -----------------------------
-# 5b. SENTINEL-1 VEGETATION INDEX
+# SENTINEL-1 VEGETATION INDEX
 # -----------------------------
 def add_s1_index(img):
     """
@@ -142,7 +143,7 @@ def add_s1_index(img):
 s1_vi = s1.map(add_s1_index)  # Apply SAR vegetation index
 
 # -----------------------------
-# 6. CLOUD-SAFE NDVI COMPOSITE
+# CLOUD-SAFE NDVI COMPOSITE
 # -----------------------------
 # Compute median over time to reduce noise
 ndvi_s2 = s2_ndvi.select("NDVI").median()
@@ -157,7 +158,7 @@ ndvi_composite = ndvi_fused.clip(AOI_BUF)
 logger.info("Cloud‑safe NDVI composite created")
 
 # -----------------------------
-# 7. FIELD-LEVEL NDVI STATISTICS
+# FIELD-LEVEL NDVI STATISTICS
 # -----------------------------
 stats = ndvi_composite.reduceRegion(
     reducer=ee.Reducer.mean().combine(
@@ -175,7 +176,7 @@ logger.info(f"Mean NDVI: {mean_ndvi:.3f}")
 logger.info(f"Max NDVI:  {max_ndvi:.3f}")
 
 # -----------------------------
-# 8. EXPORT NDVI MAP
+# EXPORT NDVI MAP
 # -----------------------------
 geemap.ee_export_image(
     ndvi_composite,
@@ -187,7 +188,7 @@ geemap.ee_export_image(
 logger.info("NDVI composite exported")
 
 # -----------------------------
-# 9. LOAD FIELD DATA
+# LOAD FIELD DATA
 # -----------------------------
 field_data = pd.read_csv(FIELD_CSV)
 
@@ -203,36 +204,87 @@ FEATURES = [
 X = field_data[FEATURES]  # Predictors
 y = field_data["yield"]    # Target variable
 
+logger.info(f"Dataset size: {len(X)} observations")
+logger.info(f"Features: {FEATURES}")
+
 # -----------------------------
-# 10. MACHINE LEARNING MODEL (XGBoost)
+# MACHINE LEARNING MODEL (XGBoost)
 # -----------------------------
+# Optimized for small datasets with strong regularization
 model = XGBRegressor(
-    n_estimators=300,
-    max_depth=4,
-    learning_rate=0.05,
-    subsample=0.8,
-    colsample_bytree=0.8,
+    n_estimators=100,        # Reduced from 300 to prevent overfitting
+    max_depth=3,             # Shallower trees for small data
+    learning_rate=0.05,      # Conservative learning rate
+    min_child_weight=3,      # Requires more samples per leaf
+    gamma=0.1,               # Minimum loss reduction for splits
+    subsample=0.8,           # Row sampling
+    colsample_bytree=0.8,    # Column sampling
+    reg_alpha=0.1,           # L1 regularization
+    reg_lambda=1.0,          # L2 regularization
     random_state=42,
     n_jobs=-1
 )
 
-# 5-fold cross-validation to estimate uncertainty
+# 5-fold cross-validation to estimate performance and uncertainty
 cv = KFold(n_splits=5, shuffle=True, random_state=42)
+
+# Calculate multiple metrics via cross-validation
 cv_rmse = -cross_val_score(
     model, X, y,
     scoring="neg_root_mean_squared_error",
     cv=cv
 )
 
+cv_mae = -cross_val_score(
+    model, X, y,
+    scoring="neg_mean_absolute_error",
+    cv=cv
+)
+
+cv_r2 = cross_val_score(
+    model, X, y,
+    scoring="r2",
+    cv=cv
+)
+
+# Report cross-validation results
+logger.info("=" * 50)
+logger.info("CROSS-VALIDATION RESULTS (5-Fold)")
+logger.info("=" * 50)
+logger.info(f"RMSE: {cv_rmse.mean():.3f} ± {cv_rmse.std():.3f}")
+logger.info(f"MAE:  {cv_mae.mean():.3f} ± {cv_mae.std():.3f}")
+logger.info(f"R²:   {cv_r2.mean():.3f} ± {cv_r2.std():.3f}")
+logger.info("=" * 50)
+
 yield_uncertainty = cv_rmse.mean()  # Average RMSE across folds
-logger.info(f"CV RMSE: {yield_uncertainty:.2f}")
 
 # Train final model on all data
 model.fit(X, y)
-logger.info("Model trained")
+logger.info("Model trained on full dataset")
+
+# Feature importance analysis
+feature_importance = pd.DataFrame({
+    'feature': FEATURES,
+    'importance': model.feature_importances_
+}).sort_values('importance', ascending=False)
+
+logger.info("\nFeature Importance:")
+for idx, row in feature_importance.iterrows():
+    logger.info(f"  {row['feature']}: {row['importance']:.4f}")
+
+# Calculate training metrics
+y_pred_train = model.predict(X)
+train_rmse = np.sqrt(mean_squared_error(y, y_pred_train))
+train_r2 = r2_score(y, y_pred_train)
+train_mae = mean_absolute_error(y, y_pred_train)
+
+logger.info("\nTraining Set Performance:")
+logger.info(f"  RMSE: {train_rmse:.3f}")
+logger.info(f"  MAE:  {train_mae:.3f}")
+logger.info(f"  R²:   {train_r2:.3f}")
 
 # -----------------------------
-# 11. FIELD-LEVEL YIELD PREDICTION
+# FIELD-LEVEL YIELD PREDICTION
 # -----------------------------
 X_field = [[
     mean_ndvi,
@@ -244,12 +296,12 @@ X_field = [[
 ]]
 
 predicted_yield = model.predict(X_field)[0]
-logger.info(
-    f"Predicted Yield: {predicted_yield:.2f} ± {yield_uncertainty:.2f} t/ha"
-)
+logger.info("\n" + "=" * 50)
+logger.info(f"PREDICTED YIELD: {predicted_yield:.2f} ± {yield_uncertainty:.2f} t/ha")
+logger.info("=" * 50)
 
 # -----------------------------
-# 12. YIELD MAP & UNCERTAINTY MAP
+# YIELD MAP & UNCERTAINTY MAP
 # -----------------------------
 with rasterio.open(NDVI_MAP_PATH) as src:
     ndvi = src.read(1)
@@ -274,10 +326,36 @@ with rasterio.open(YIELD_MAP_PATH, "w", **meta) as dst:
 with rasterio.open(UNCERTAINTY_MAP_PATH, "w", **meta) as dst:
     dst.write(uncertainty_map.astype("float32"), 1)
 
-logger.info("Yield map exported")
-logger.info("Uncertainty map exported")
+logger.info("\nYield map exported: " + YIELD_MAP_PATH)
+logger.info("Uncertainty map exported: " + UNCERTAINTY_MAP_PATH)
 
 # -----------------------------
-# 13. PIPELINE COMPLETE
+# SAVE MODEL METADATA
 # -----------------------------
+metadata = {
+    "model": "XGBoost Regressor (Optimized for Small Data)",
+    "n_observations": len(X),
+    "features": FEATURES,
+    "cv_rmse": float(cv_rmse.mean()),
+    "cv_mae": float(cv_mae.mean()),
+    "cv_r2": float(cv_r2.mean()),
+    "train_rmse": float(train_rmse),
+    "train_r2": float(train_r2),
+    "predicted_yield": float(predicted_yield),
+    "uncertainty": float(yield_uncertainty),
+    "feature_importance": feature_importance.to_dict('records')
+}
+
+import json
+metadata_path = os.path.join(OUTPUT_DIR, "model_metadata.json")
+with open(metadata_path, 'w') as f:
+    json.dump(metadata, f, indent=2)
+
+logger.info(f"Model metadata saved: {metadata_path}")
+
+# -----------------------------
+# PIPELINE COMPLETE
+# -----------------------------
+logger.info("\n" + "=" * 50)
 logger.info("✅ AI CROP YIELD PIPELINE COMPLETE")
+logger.info("=" * 50)
