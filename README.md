@@ -108,6 +108,12 @@ python AI_crop.py
 
 ---
 
+## Run Streamlit Dashboard
+```bash
+Streamlit run ./Dashboard
+```
+---
+
 ## 📜 License
 This project is licensed under the **MIT License**.
 
