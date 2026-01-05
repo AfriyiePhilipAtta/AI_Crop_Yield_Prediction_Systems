@@ -92,10 +92,18 @@ This approach makes the system **robust, scalable, and usable in tropical and hi
 
 ---
 
-## Setup environment
+## Setup environment for Mac
   ```bash
   chmod +x ./setup.sh
   ./setup.sh
+  conda activate crop_env
+  ```
+
+---
+
+## Setup environment for Windows
+  ```bash
+  python setup_windows.py
   conda activate crop_env
   ```
 
