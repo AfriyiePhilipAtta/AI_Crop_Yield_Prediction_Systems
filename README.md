@@ -61,7 +61,7 @@ This approach makes the system **robust, scalable, and usable in tropical and hi
 - **Features:** NDVI_mean, NDVI_max, VV, VH, rainfall, temp  
 - **Target:** yield (t/ha)  
 - **Validation:** 5-fold cross-validation
-- 
+  
 ---
 ## Feature Importance:
 The system computes the importance of each feature, showing which variables most influence yield predictions. This improves interpretability and informs agronomic decisions.
