@@ -1,0 +1,201 @@
+2026-01-05 16:26:36,579 | INFO | Earth Engine initialized
+2026-01-05 16:26:37,141 | INFO | Sentinel‑2 scenes found: 80
+2026-01-05 16:26:37,405 | INFO | Sentinel‑1 scenes found: 98
+2026-01-05 16:26:37,409 | INFO | Cloud‑safe NDVI composite created
+2026-01-05 16:26:38,377 | INFO | Mean NDVI: 0.681
+2026-01-05 16:26:38,377 | INFO | Max NDVI:  0.899
+2026-01-05 16:26:40,452 | INFO | NDVI composite exported
+2026-01-05 16:26:40,464 | INFO | Dataset size: 95 observations
+2026-01-05 16:26:40,465 | INFO | Features: ['NDVI_mean', 'NDVI_max', 'VV', 'VH', 'rainfall', 'temp']
+2026-01-05 16:26:41,244 | INFO | ==================================================
+2026-01-05 16:26:41,244 | INFO | CROSS-VALIDATION RESULTS (5-Fold)
+2026-01-05 16:26:41,244 | INFO | ==================================================
+2026-01-05 16:26:41,244 | INFO | RMSE: 0.284 ± 0.050
+2026-01-05 16:26:41,244 | INFO | MAE:  0.225 ± 0.053
+2026-01-05 16:26:41,244 | INFO | R²:   0.848 ± 0.051
+2026-01-05 16:26:41,244 | INFO | ==================================================
+2026-01-05 16:26:41,295 | INFO | Model trained on full dataset
+2026-01-05 16:26:41,297 | INFO | 
+Feature Importance:
+2026-01-05 16:26:41,297 | INFO |   NDVI_max: 0.3529
+2026-01-05 16:26:41,297 | INFO |   temp: 0.2005
+2026-01-05 16:26:41,297 | INFO |   NDVI_mean: 0.1332
+2026-01-05 16:26:41,297 | INFO |   VH: 0.1323
+2026-01-05 16:26:41,297 | INFO |   rainfall: 0.1212
+2026-01-05 16:26:41,297 | INFO |   VV: 0.0599
+2026-01-05 16:26:41,298 | INFO | 
+Training Set Performance:
+2026-01-05 16:26:41,298 | INFO |   RMSE: 0.140
+2026-01-05 16:26:41,298 | INFO |   MAE:  0.108
+2026-01-05 16:26:41,298 | INFO |   R²:   0.969
+2026-01-05 16:26:41,299 | INFO | 
+==================================================
+2026-01-05 16:26:41,299 | INFO | PREDICTED YIELD: 7.22 ± 0.28 t/ha
+2026-01-05 16:26:41,299 | INFO | ==================================================
+2026-01-05 16:26:41,357 | INFO | 
+Yield map exported: /Users/afriyie/Downloads/AI_Crop_Yield_Prediction_Systems-main/output/Yield_Map.tif
+2026-01-05 16:26:41,357 | INFO | Uncertainty map exported: /Users/afriyie/Downloads/AI_Crop_Yield_Prediction_Systems-main/output/Yield_Uncertainty_Map.tif
+2026-01-05 16:26:41,358 | INFO | Model metadata saved: /Users/afriyie/Downloads/AI_Crop_Yield_Prediction_Systems-main/output/model_metadata.json
+2026-01-05 16:26:41,358 | INFO | 
+==================================================
+2026-01-05 16:26:41,358 | INFO | ✅ AI CROP YIELD PIPELINE COMPLETE
+2026-01-05 16:26:41,358 | INFO | ==================================================
+2026-01-05 20:01:06,540 | INFO | Earth Engine initialized
+2026-01-05 20:01:07,568 | INFO | Sentinel‑2 scenes found: 80
+2026-01-05 20:01:07,854 | INFO | Sentinel‑1 scenes found: 98
+2026-01-05 20:01:07,859 | INFO | Cloud‑safe NDVI composite created
+2026-01-05 20:01:10,824 | INFO | Mean NDVI: 0.681
+2026-01-05 20:01:10,825 | INFO | Max NDVI:  0.899
+2026-01-05 20:01:13,404 | INFO | NDVI composite exported
+2026-01-05 20:01:13,412 | INFO | Dataset size: 95 observations
+2026-01-05 20:01:13,412 | INFO | Features: ['NDVI_mean', 'NDVI_max', 'VV', 'VH', 'rainfall', 'temp']
+2026-01-05 20:01:14,241 | INFO | ==================================================
+2026-01-05 20:01:14,241 | INFO | CROSS-VALIDATION RESULTS (5-Fold)
+2026-01-05 20:01:14,241 | INFO | ==================================================
+2026-01-05 20:01:14,241 | INFO | RMSE: 0.284 ± 0.050
+2026-01-05 20:01:14,241 | INFO | MAE:  0.225 ± 0.053
+2026-01-05 20:01:14,241 | INFO | R²:   0.848 ± 0.051
+2026-01-05 20:01:14,241 | INFO | ==================================================
+2026-01-05 20:01:14,296 | INFO | Model trained on full dataset
+2026-01-05 20:01:14,297 | INFO | 
+Feature Importance:
+2026-01-05 20:01:14,297 | INFO |   NDVI_max: 0.3529
+2026-01-05 20:01:14,297 | INFO |   temp: 0.2005
+2026-01-05 20:01:14,297 | INFO |   NDVI_mean: 0.1332
+2026-01-05 20:01:14,297 | INFO |   VH: 0.1323
+2026-01-05 20:01:14,297 | INFO |   rainfall: 0.1212
+2026-01-05 20:01:14,297 | INFO |   VV: 0.0599
+2026-01-05 20:01:14,298 | INFO | 
+Training Set Performance:
+2026-01-05 20:01:14,298 | INFO |   RMSE: 0.140
+2026-01-05 20:01:14,298 | INFO |   MAE:  0.108
+2026-01-05 20:01:14,298 | INFO |   R²:   0.969
+2026-01-05 20:01:14,298 | INFO | 
+==================================================
+2026-01-05 20:01:14,298 | INFO | PREDICTED YIELD: 7.22 ± 0.28 t/ha
+2026-01-05 20:01:14,298 | INFO | ==================================================
+2026-01-05 20:01:14,314 | INFO | 
+Yield map exported: /Users/afriyie/Downloads/AI_Crop_Yield_Prediction_Systems-main/output/Yield_Map.tif
+2026-01-05 20:01:14,314 | INFO | Uncertainty map exported: /Users/afriyie/Downloads/AI_Crop_Yield_Prediction_Systems-main/output/Yield_Uncertainty_Map.tif
+2026-01-05 20:01:14,315 | INFO | Model metadata saved: /Users/afriyie/Downloads/AI_Crop_Yield_Prediction_Systems-main/output/model_metadata.json
+2026-01-05 20:01:14,315 | INFO | 
+==================================================
+2026-01-05 20:01:14,315 | INFO | ✅ AI CROP YIELD PIPELINE COMPLETE
+2026-01-05 20:01:14,315 | INFO | ==================================================
+2026-01-12 15:37:01,715 | INFO | Earth Engine initialized
+2026-01-12 15:37:05,612 | INFO | Sentinel-2 scenes found: 80
+2026-01-12 15:37:06,016 | INFO | Sentinel-1 scenes found: 98
+2026-01-12 15:37:06,022 | INFO | Cloud-safe NDVI composite created
+2026-01-12 15:37:10,184 | INFO | Mean NDVI: 0.681
+2026-01-12 15:37:10,184 | INFO | Max NDVI: 0.899
+2026-01-12 15:37:13,979 | INFO | NDVI composite exported
+2026-01-12 15:37:13,985 | INFO | Dataset size: 95 observations
+2026-01-12 15:37:13,985 | INFO | Features: ['NDVI_mean', 'NDVI_max', 'VV', 'VH', 'rainfall', 'temp']
+2026-01-12 15:37:14,805 | INFO | ==================================================
+2026-01-12 15:37:14,805 | INFO | CROSS-VALIDATION RESULTS (5-Fold)
+2026-01-12 15:37:14,805 | INFO | ==================================================
+2026-01-12 15:37:14,805 | INFO | RMSE: 0.284 ± 0.050
+2026-01-12 15:37:14,805 | INFO | MAE:  0.225 ± 0.053
+2026-01-12 15:37:14,805 | INFO | R²:   0.848 ± 0.051
+2026-01-12 15:37:14,805 | INFO | ==================================================
+2026-01-12 15:37:14,860 | INFO | Model trained on full dataset
+2026-01-12 15:37:14,861 | INFO | 
+Feature Importance:
+2026-01-12 15:37:14,861 | INFO |   NDVI_max: 0.3529
+2026-01-12 15:37:14,861 | INFO |   temp: 0.2005
+2026-01-12 15:37:14,861 | INFO |   NDVI_mean: 0.1332
+2026-01-12 15:37:14,861 | INFO |   VH: 0.1323
+2026-01-12 15:37:14,861 | INFO |   rainfall: 0.1212
+2026-01-12 15:37:14,861 | INFO |   VV: 0.0599
+2026-01-12 15:37:15,491 | INFO | Feature importance plot saved: /Users/afriyie/Downloads/AI_Crop_Yield_Prediction_Systems-main/output/feature_importance.png
+2026-01-12 15:37:15,493 | INFO | 
+Training Set Performance:
+2026-01-12 15:37:15,493 | INFO |   RMSE: 0.140
+2026-01-12 15:37:15,493 | INFO |   MAE:  0.108
+2026-01-12 15:37:15,493 | INFO |   R²:   0.969
+2026-01-12 15:37:15,494 | INFO | 
+==================================================
+2026-01-12 15:37:15,494 | INFO | PREDICTED YIELD: 7.22 ± 0.28 t/ha
+2026-01-12 15:37:15,494 | INFO | ==================================================
+2026-01-12 15:37:15,531 | INFO | 
+Yield map exported: /Users/afriyie/Downloads/AI_Crop_Yield_Prediction_Systems-main/output/Yield_Map.tif
+2026-01-12 15:37:15,531 | INFO | Uncertainty map exported: /Users/afriyie/Downloads/AI_Crop_Yield_Prediction_Systems-main/output/Yield_Uncertainty_Map.tif
+2026-01-12 15:37:15,531 | INFO | Model metadata saved: /Users/afriyie/Downloads/AI_Crop_Yield_Prediction_Systems-main/output/model_metadata.json
+2026-01-12 15:37:15,531 | INFO | 
+==================================================
+2026-01-12 15:37:15,531 | INFO | ✅ AI CROP YIELD PIPELINE COMPLETE
+2026-01-12 15:37:15,531 | INFO | ==================================================
+2026-01-12 15:44:43,814 | INFO | 📌 Logging initialized
+2026-01-12 15:44:46,584 | INFO | 🌍 Google Earth Engine initialized
+2026-01-12 15:44:46,584 | INFO | 📍 AOI defined with buffer
+2026-01-12 15:44:47,095 | INFO | 🛰️ Sentinel-2 images found: 80
+2026-01-12 15:44:47,924 | INFO | 🛰️ Sentinel-1 images found: 98
+2026-01-12 15:44:47,927 | INFO | ✅ NDVI computed for all Sentinel-2 images
+2026-01-12 15:44:47,928 | INFO | ✅ SAR vegetation index computed for Sentinel-1
+2026-01-12 15:44:47,928 | INFO | ☁️ Cloud-safe NDVI composite created
+2026-01-12 15:44:49,961 | INFO | 📊 Field NDVI stats -> Mean: 0.681, Max: 0.899
+2026-01-12 15:44:53,266 | INFO | 🗺️ NDVI map exported: /Users/afriyie/Downloads/AI_Crop_Yield_Prediction_Systems-main/output/NDVI_Map.tif
+2026-01-12 15:44:53,278 | INFO | 📂 Field data loaded: 95 observations
+2026-01-12 15:44:54,107 | INFO | Cross-validation RMSE: 0.284 ± 0.050
+2026-01-12 15:44:54,107 | INFO | Cross-validation R²: 0.848 ± 0.051
+2026-01-12 15:44:54,164 | INFO | ✅ XGBoost model trained on full dataset
+2026-01-12 15:44:54,165 | INFO | 📈 Feature importance:
+2026-01-12 15:44:54,165 | INFO |   NDVI_max: 0.3529
+2026-01-12 15:44:54,165 | INFO |   temp: 0.2005
+2026-01-12 15:44:54,165 | INFO |   NDVI_mean: 0.1332
+2026-01-12 15:44:54,165 | INFO |   VH: 0.1323
+2026-01-12 15:44:54,165 | INFO |   rainfall: 0.1212
+2026-01-12 15:44:54,165 | INFO |   VV: 0.0599
+2026-01-12 15:44:54,412 | INFO | Feature importance plot saved: /Users/afriyie/Downloads/AI_Crop_Yield_Prediction_Systems-main/output/feature_importance.png
+2026-01-12 15:44:54,413 | INFO | Training RMSE: 0.140, R²: 0.969
+2026-01-12 15:44:54,413 | INFO | 🌾 Predicted yield: 7.22 ± 0.28 t/ha
+2026-01-12 15:44:54,470 | INFO | 🗺️ Yield map exported: /Users/afriyie/Downloads/AI_Crop_Yield_Prediction_Systems-main/output/Yield_Map.tif
+2026-01-12 15:44:54,470 | INFO | 🗺️ Uncertainty map exported: /Users/afriyie/Downloads/AI_Crop_Yield_Prediction_Systems-main/output/Yield_Uncertainty_Map.tif
+2026-01-12 15:44:54,471 | INFO | 🗂️ Model metadata saved: /Users/afriyie/Downloads/AI_Crop_Yield_Prediction_Systems-main/output/model_metadata.json
+2026-01-12 15:44:54,471 | INFO | ✅ AI CROP YIELD PIPELINE COMPLETE
+2026-01-12 15:46:09,809 | INFO | 📌 Logging initialized
+2026-01-12 15:46:12,615 | INFO | 🌍 Google Earth Engine initialized
+2026-01-12 15:46:12,615 | INFO | 📍 AOI defined with buffer
+2026-01-12 15:46:15,907 | INFO | 🛰️ Sentinel-2 images found: 80
+2026-01-12 15:46:16,202 | INFO | 🛰️ Sentinel-1 images found: 98
+2026-01-12 15:46:16,205 | INFO | ✅ NDVI computed for all Sentinel-2 images
+2026-01-12 15:46:16,206 | INFO | ✅ SAR vegetation index computed for Sentinel-1
+2026-01-12 15:46:16,207 | INFO | ☁️ Cloud-safe NDVI composite created
+2026-01-12 15:46:17,722 | INFO | 📊 Field NDVI stats -> Mean: 0.681, Max: 0.899
+2026-01-12 15:46:19,741 | INFO | 🗺️ NDVI map exported: /Users/afriyie/Downloads/AI_Crop_Yield_Prediction_Systems-main/output/NDVI_Map.tif
+2026-01-12 15:46:19,750 | INFO | 📂 Field data loaded: 95 observations
+2026-01-12 15:46:20,593 | INFO | Cross-validation RMSE: 0.284 ± 0.050
+2026-01-12 15:46:20,593 | INFO | Cross-validation R²: 0.848 ± 0.051
+2026-01-12 15:46:20,646 | INFO | ✅ XGBoost model trained on full dataset
+2026-01-12 15:46:20,647 | INFO | 📈 Feature importance:
+2026-01-12 15:46:20,647 | INFO |   NDVI_max: 0.3529
+2026-01-12 15:46:20,647 | INFO |   temp: 0.2005
+2026-01-12 15:46:20,647 | INFO |   NDVI_mean: 0.1332
+2026-01-12 15:46:20,647 | INFO |   VH: 0.1323
+2026-01-12 15:46:20,647 | INFO |   rainfall: 0.1212
+2026-01-12 15:46:20,647 | INFO |   VV: 0.0599
+2026-01-12 15:46:20,901 | INFO | Feature importance plot saved: /Users/afriyie/Downloads/AI_Crop_Yield_Prediction_Systems-main/output/feature_importance.png
+2026-01-12 15:46:20,902 | INFO | Training RMSE: 0.140, R²: 0.969
+2026-01-12 15:46:20,903 | INFO | 🌾 Predicted yield: 7.22 ± 0.28 t/ha
+2026-01-12 15:46:20,961 | INFO | 🗺️ Yield map exported: /Users/afriyie/Downloads/AI_Crop_Yield_Prediction_Systems-main/output/Yield_Map.tif
+2026-01-12 15:46:20,961 | INFO | 🗺️ Uncertainty map exported: /Users/afriyie/Downloads/AI_Crop_Yield_Prediction_Systems-main/output/Yield_Uncertainty_Map.tif
+2026-01-12 15:46:20,961 | INFO | 🗂️ Model metadata saved: /Users/afriyie/Downloads/AI_Crop_Yield_Prediction_Systems-main/output/model_metadata.json
+2026-01-12 15:46:20,961 | INFO | ✅ AI CROP YIELD PIPELINE COMPLETE
+2026-01-12 16:07:30,075 | INFO | 📌 Logging initialized
+2026-01-12 16:07:32,354 | INFO | 🌍 Google Earth Engine initialized
+2026-01-12 16:07:32,355 | INFO | 📍 AOI defined with buffer
+2026-01-12 16:07:32,804 | INFO | 🛰️ Sentinel-2 images found: 80
+2026-01-12 16:07:35,059 | INFO | 🛰️ Sentinel-1 images found: 98
+2026-01-12 16:07:35,062 | INFO | ✅ NDVI computed for all Sentinel-2 images
+2026-01-12 16:07:35,063 | INFO | ✅ SAR vegetation index computed for Sentinel-1
+2026-01-12 16:07:35,064 | INFO | ☁️ Cloud-safe NDVI composite created
+2026-01-12 16:07:36,693 | INFO | 📊 Field NDVI stats -> Mean: 0.681, Max: 0.899
+2026-01-12 16:07:40,774 | INFO | 🗺️ NDVI map exported: /Users/afriyie/Downloads/AI_Crop_Yield_Prediction_Systems-main/output/NDVI_Map.tif
+2026-01-12 16:07:40,784 | INFO | 📂 Field data loaded: 95 observations
+2026-01-12 16:07:41,689 | INFO | ✅ XGBoost model trained on full dataset
+2026-01-12 16:07:41,943 | INFO | 📈 Feature importance saved
+2026-01-12 16:07:41,944 | INFO | Training RMSE: 0.140, R²: 0.969
+2026-01-12 16:07:41,945 | INFO | 🌾 Predicted yield: 7.22 ± 0.28 t/ha
+2026-01-12 16:07:42,008 | INFO | 🗺️ Yield & uncertainty maps exported
+2026-01-12 16:07:42,009 | INFO | 🗂️ Model metadata saved: /Users/afriyie/Downloads/AI_Crop_Yield_Prediction_Systems-main/output/model_metadata.json
+2026-01-12 16:07:42,009 | INFO | ✅ AI CROP YIELD PIPELINE COMPLETE

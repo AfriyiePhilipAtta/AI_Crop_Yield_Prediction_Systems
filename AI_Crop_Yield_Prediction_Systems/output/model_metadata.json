@@ -1,0 +1,45 @@
+{
+  "model": "XGBoost Regressor (Optimized for Small Data)",
+  "n_observations": 95,
+  "features": [
+    "NDVI_mean",
+    "NDVI_max",
+    "VV",
+    "VH",
+    "rainfall",
+    "temp"
+  ],
+  "cv_rmse": 0.283702013409468,
+  "cv_mae": 0.22488965405915912,
+  "cv_r2": 0.8476714592073986,
+  "train_rmse": 0.14041547889761632,
+  "train_r2": 0.9685012253169255,
+  "predicted_yield": 7.22027063369751,
+  "uncertainty": 0.283702013409468,
+  "feature_importance": [
+    {
+      "feature": "NDVI_max",
+      "importance": 0.3529091775417328
+    },
+    {
+      "feature": "temp",
+      "importance": 0.2005382925271988
+    },
+    {
+      "feature": "NDVI_mean",
+      "importance": 0.13319435715675354
+    },
+    {
+      "feature": "VH",
+      "importance": 0.1323225200176239
+    },
+    {
+      "feature": "rainfall",
+      "importance": 0.12116045504808426
+    },
+    {
+      "feature": "VV",
+      "importance": 0.05987517908215523
+    }
+  ]
+}
