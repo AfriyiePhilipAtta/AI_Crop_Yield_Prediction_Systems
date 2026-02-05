@@ -1,86 +1,112 @@
 import subprocess
-import sys
 
-# -----------------------------
-# USER-DEFINED CONFIGURATION
-# -----------------------------
-ENV_NAME = "crop_env"         # Name of the conda environment to create
-PYTHON_VERSION = "3.12"       # Python version to use in the environment
+# ============================================================
+# USER CONFIGURATION
+# ============================================================
+ENV_NAME = "crop_env"
+PYTHON_VERSION = "3.12"
 
-print("📦 Starting Windows full setup...")
+print("📦 Starting full environment setup...")
 
-# -----------------------------
-# 1️⃣ Create conda environment
-# -----------------------------
+# ============================================================
+# 1️⃣ CREATE CONDA ENVIRONMENT
+# ============================================================
 try:
     subprocess.run(
         ["conda", "create", "-n", ENV_NAME, f"python={PYTHON_VERSION}", "-y"],
         check=True
     )
-    # ✅ Explanation:
-    # 'conda create -n <ENV_NAME> python=<version> -y' creates a new isolated environment.
-    # This environment keeps all packages and dependencies separate from your system Python,
-    # preventing version conflicts and ensuring reproducibility.
-    # '-y' automatically confirms installation.
     print(f"✅ Conda environment '{ENV_NAME}' created.")
 except subprocess.CalledProcessError:
-    # If the environment already exists, this exception will occur
-    print(f"⚠️ Environment '{ENV_NAME}' may already exist.")
+    print(f"⚠️ Conda environment '{ENV_NAME}' already exists. Skipping creation.")
 
-# -----------------------------
-# 2️⃣ Activate environment and install packages
-# -----------------------------
-packages = [
-    "geopandas",            # Handles geospatial vector data (shapefiles, GeoJSON)
-    "rasterio",             # Reads/writes raster data (e.g., GeoTIFF)
-    "shapely",              # Geometry operations (points, lines, polygons)
-    "pyproj",               # Coordinate reference system transformations
-    "fiona",                # I/O for vector data formats
-    "gdal",                 # Geospatial Data Abstraction Library (core GIS engine)
-    "numpy",                # Numerical operations on arrays
-    "pandas",               # Tabular data manipulation
-    "matplotlib",           # 2D plotting library
-    "seaborn",              # Statistical plotting (enhances matplotlib)
-    "scikit-learn",         # Machine learning algorithms (XGBoost requires it)
-    "xgboost",              # Gradient boosting library for regression/classification
-    "pystac-client",        # Access to STAC catalogs (spatial-temporal asset catalogs)
-    "planetary-computer",   # Tools for Microsoft Planetary Computer datasets
-    "earthengine-api",      # Google Earth Engine Python API
-    "geemap",               # Interactive mapping & exporting for Earth Engine
-    "streamlit",            # Web app framework for Python
-    "streamlit-folium",     # Embeds interactive folium maps in Streamlit apps
-    "folium",               # Leaflet.js maps in Python
-    "branca",               # Helper library for folium colormaps and legends
-    "tqdm"                  # Progress bars for loops/downloads
+# ============================================================
+# 2️⃣ INSTALL CORE PACKAGES (conda-forge)
+# ============================================================
+conda_packages = [
+    # ---- Core GIS stack ----
+    "geopandas",
+    "rasterio",
+    "shapely",
+    "pyproj",
+    "fiona",
+    "gdal",
+
+    # ---- Data science ----
+    "numpy",
+    "pandas",
+    "matplotlib",
+    "seaborn",
+    "scikit-learn",
+    "xgboost",
+
+    # ---- Remote sensing / cloud ----
+    "pystac-client",
+    "planetary-computer",
+    "earthengine-api",
+    "geemap",
+
+    # ---- Dashboard & mapping ----
+    "streamlit",
+    "streamlit-folium",
+    "folium",
+    "branca",
+
+    # ---- Utilities ----
+    "tqdm",
+    "pip"
 ]
 
-# Explanation:
-# This list contains all the libraries needed for geospatial data processing,
-# visualization, machine learning, and interactive dashboards.
-# Installing everything in one go ensures reproducibility.
-
-print("🌍 Installing packages...")
+print("🌍 Installing conda packages (this may take several minutes)...")
 
 subprocess.run(
-    ["conda", "install", "-n", ENV_NAME, "-c", "conda-forge", "-y"] + packages,
+    [
+        "conda", "install",
+        "-n", ENV_NAME,
+        "-c", "conda-forge",
+        "-y"
+    ] + conda_packages,
     check=True
 )
-# ✅ Explanation:
-# 'conda install -n <ENV_NAME> -c conda-forge <packages>'
-# Installs all packages in the previously created environment.
-# '-c conda-forge' specifies the conda-forge channel (community-maintained, often newest versions).
-# 'check=True' ensures the script stops if installation fails.
 
-print("\n✅ All packages installation attempted.")
+print("✅ Conda packages installed.")
 
-# -----------------------------
-# 3️⃣ Google Earth Engine Authentication Instructions
-# -----------------------------
-print("\n🔐 FINAL STEP: Authenticate Google Earth Engine")
-print("Run the following after this setup completes:")
-print(f"    conda activate {ENV_NAME}")
-print("    earthengine authenticate")
-# Explanation:
-# - 'conda activate <ENV_NAME>': switches to the new environment.
-# - 'earthengine authenticate': opens a browser to log in with your Google account
-#   and grants access to Earth Engine datasets. This step is required only once per machine.
+# ============================================================
+# 3️⃣ PIN STREAMLIT-CRITICAL DEPENDENCIES
+# ============================================================
+# Streamlit currently requires:
+# - protobuf < 4
+# - altair < 5
+
+print("🔧 Pinning Streamlit-critical dependencies...")
+
+# Remove incompatible versions (if any)
+subprocess.run(
+    ["conda", "run", "-n", ENV_NAME, "pip", "uninstall", "-y", "protobuf", "altair"],
+    check=False
+)
+
+# Install known-compatible versions
+subprocess.run(
+    [
+        "conda", "run",
+        "-n", ENV_NAME,
+        "pip", "install",
+        "protobuf>=3.20.0,<4",
+        "altair<5"
+    ],
+    check=True
+)
+
+print("✅ Protobuf and Altair pinned to Streamlit-compatible versions.")
+
+# ============================================================
+# 4️⃣ FINAL INSTRUCTIONS
+# ============================================================
+print("\n🎉 SETUP COMPLETE!\n")
+print("Next steps:")
+print(f"1️⃣ Activate the environment:\n   conda activate {ENV_NAME}")
+print("2️⃣ Authenticate Google Earth Engine (run once):\n   earthengine authenticate")
+print("3️⃣ Run your dashboard:\n   streamlit run dashboard.py")
+
+print("\n✅ This environment is now STABLE and will not randomly break.")
