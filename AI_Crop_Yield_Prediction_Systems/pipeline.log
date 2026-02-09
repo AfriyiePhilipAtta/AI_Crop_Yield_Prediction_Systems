@@ -1,0 +1,156 @@
+2026-02-07 23:22:32,621 | INFO | 📌 Logging initialized
+2026-02-07 23:22:33,878 | INFO | 🌍 Google Earth Engine initialized
+2026-02-07 23:22:33,879 | INFO | 📍 AOI defined
+2026-02-07 23:22:34,409 | INFO | 🛰️ Sentinel-2 images: 80
+2026-02-07 23:22:34,715 | INFO | 🛰️ Sentinel-1 images: 98
+2026-02-07 23:22:34,718 | INFO | ✅ NDVI computed
+2026-02-07 23:22:34,719 | INFO | ✅ SAR vegetation index computed
+2026-02-07 23:22:34,720 | INFO | ☁️ Cloud-safe NDVI composite created
+2026-02-07 23:22:37,217 | INFO | 📊 NDVI Mean=0.681, Max=0.899
+2026-02-07 23:22:40,084 | INFO | 🗺️ NDVI map exported
+2026-02-07 23:22:40,120 | INFO | 📂 Training samples: 26
+2026-02-07 23:22:40,555 | INFO | ✅ Model trained
+2026-02-07 23:22:41,193 | INFO | 📈 Train RMSE=0.00, R²=-22597261382061028.00
+2026-02-07 23:22:41,194 | INFO | 🌾 Yield=7.61 ± 0.00 t/ha
+2026-02-07 23:22:41,219 | INFO | 🗺️ Yield maps saved
+2026-02-07 23:22:41,220 | INFO | 🗂️ Metadata saved
+2026-02-07 23:22:41,220 | INFO | ✅ AI CROP YIELD PIPELINE COMPLETE
+2026-02-07 23:26:14,868 | INFO | 📌 Logging initialized
+2026-02-07 23:26:16,070 | INFO | 🌍 Google Earth Engine initialized
+2026-02-07 23:26:16,070 | INFO | 📍 AOI defined
+2026-02-07 23:26:16,486 | INFO | 🛰️ Sentinel-2 images: 41
+2026-02-07 23:26:16,720 | INFO | 🛰️ Sentinel-1 images: 102
+2026-02-07 23:26:16,723 | INFO | ✅ NDVI computed
+2026-02-07 23:26:16,724 | INFO | ✅ SAR vegetation index computed
+2026-02-07 23:26:16,725 | INFO | ☁️ Cloud-safe NDVI composite created
+2026-02-07 23:26:18,030 | INFO | 📊 NDVI Mean=0.637, Max=0.796
+2026-02-07 23:26:19,178 | INFO | 🗺️ NDVI map exported
+2026-02-07 23:26:19,203 | INFO | 📂 Training samples: 26
+2026-02-07 23:26:19,611 | INFO | ✅ Model trained
+2026-02-07 23:26:19,847 | INFO | 📈 Train RMSE=0.00, R²=-22597261382061028.00
+2026-02-07 23:26:19,847 | INFO | 🌾 Yield=7.61 ± 0.00 t/ha
+2026-02-07 23:26:19,893 | INFO | 🗺️ Yield maps saved
+2026-02-07 23:26:19,894 | INFO | 🗂️ Metadata saved
+2026-02-07 23:26:19,894 | INFO | ✅ AI CROP YIELD PIPELINE COMPLETE
+2026-02-07 23:35:31,492 | INFO | 📌 Logging initialized
+2026-02-07 23:35:32,667 | INFO | 🌍 Google Earth Engine initialized
+2026-02-07 23:35:32,668 | INFO | 📍 AOI defined
+2026-02-07 23:35:33,055 | INFO | 🛰️ Sentinel-2 images: 41
+2026-02-07 23:35:33,370 | INFO | 🛰️ Sentinel-1 images: 102
+2026-02-07 23:35:33,373 | INFO | ✅ NDVI computed
+2026-02-07 23:35:33,374 | INFO | ✅ SAR vegetation index computed
+2026-02-07 23:35:33,375 | INFO | ☁️ Cloud-safe NDVI composite created
+2026-02-07 23:35:34,654 | INFO | 📊 NDVI Mean=0.637, Max=0.796
+2026-02-07 23:35:35,842 | INFO | 🗺️ NDVI map exported
+2026-02-07 23:38:21,913 | INFO | 📌 Logging initialized
+2026-02-07 23:38:23,216 | INFO | 🌍 Google Earth Engine initialized
+2026-02-07 23:38:23,217 | INFO | 📍 AOI defined
+2026-02-07 23:38:23,219 | INFO | ✅ NDVI computed
+2026-02-07 23:38:23,220 | INFO | ✅ SAR vegetation index computed
+2026-02-07 23:38:23,220 | INFO | ☁️ Cloud-safe composite created
+2026-02-07 23:38:24,813 | INFO | 📊 NDVI Mean=0.637, Max=0.796
+2026-02-07 23:38:26,562 | INFO | 📂 Training samples: 73
+2026-02-07 23:38:27,348 | INFO | ✅ Biomass model trained
+2026-02-07 23:38:27,601 | INFO | 📈 Train RMSE=0.337, R²=0.996
+2026-02-07 23:38:27,601 | INFO | 🌱 Biomass index = -11.032 ± 0.981
+2026-02-07 23:38:27,646 | INFO | 🗺️ Biomass maps saved
+2026-02-07 23:38:27,647 | INFO | 🗂️ Metadata saved
+2026-02-07 23:38:27,647 | INFO | ✅ AI CROP BIOMASS PIPELINE COMPLETE
+2026-02-07 23:43:58,065 | INFO | 📌 Logging initialized
+2026-02-07 23:43:59,255 | INFO | 🌍 Google Earth Engine initialized
+2026-02-07 23:43:59,256 | INFO | 📍 AOI defined
+2026-02-07 23:43:59,259 | INFO | ✅ NDVI computed
+2026-02-07 23:43:59,260 | INFO | ✅ SAR vegetation index computed
+2026-02-07 23:43:59,260 | INFO | ☁️ Cloud-safe composite created
+2026-02-07 23:44:03,212 | INFO | 📊 NDVI Mean=0.719, Max=0.858
+2026-02-07 23:44:04,991 | INFO | 📂 Training samples: 73
+2026-02-07 23:44:05,800 | INFO | ✅ Biomass model trained
+2026-02-07 23:44:06,048 | INFO | 📈 Train RMSE=0.268, R²=0.998
+2026-02-07 23:44:06,048 | INFO | 🌱 Biomass index = -12.233 ± 0.825
+2026-02-07 23:44:06,100 | INFO | 🗺️ Biomass maps saved
+2026-02-07 23:44:06,100 | INFO | 🗂️ Metadata saved
+2026-02-07 23:44:06,100 | INFO | ✅ AI CROP BIOMASS PIPELINE COMPLETE
+2026-02-07 23:54:39,529 | INFO | 📌 Logging initialized
+2026-02-07 23:54:41,258 | INFO | 🌍 Google Earth Engine initialized
+2026-02-07 23:54:41,260 | INFO | 📍 Town-level AOI defined
+2026-02-07 23:54:41,260 | INFO | 🌾 Cropland mask applied
+2026-02-07 23:54:41,262 | INFO | ✅ NDVI computed
+2026-02-07 23:54:41,264 | INFO | ✅ SAR converted to linear scale
+2026-02-07 23:54:41,264 | INFO | 🌱 Biomass composite created
+2026-02-08 00:01:48,085 | INFO | 📌 Logging initialized
+2026-02-08 00:01:49,317 | INFO | 🌍 Google Earth Engine initialized
+2026-02-08 00:01:49,318 | INFO | 📍 Town-level AOI defined (Witzenhausen)
+2026-02-08 00:01:49,318 | INFO | 🌾 Cropland mask applied
+2026-02-08 00:01:49,322 | INFO | 🌱 Biomass composite created
+2026-02-08 00:01:56,910 | WARNING | ⚠️ Biomass statistics could not be computed (no valid pixels)
+2026-02-08 00:02:00,422 | INFO | 🗺️ Biomass map exported
+2026-02-08 00:02:00,449 | INFO | 📂 Training samples: 73
+2026-02-08 00:02:01,228 | INFO | ✅ Biomass model trained
+2026-02-08 00:02:01,229 | INFO | 📈 Train RMSE=0.001, R²=0.995
+2026-02-08 00:02:01,229 | INFO | 🌱 Biomass index = 0.005 ± 0.001
+2026-02-08 00:02:01,269 | INFO | 🗺️ Biomass uncertainty map saved
+2026-02-08 00:02:01,269 | INFO | 🗂️ Metadata saved
+2026-02-08 00:02:01,270 | INFO | ✅ AI CROP BIOMASS PIPELINE COMPLETE
+2026-02-08 00:13:43,544 | INFO | 📌 Logging initialized
+2026-02-08 00:13:44,757 | INFO | 🌍 Google Earth Engine initialized
+2026-02-08 00:13:44,758 | INFO | 📍 Town-level AOI defined (Witzenhausen)
+2026-02-08 00:13:44,761 | INFO | 🌱 Biomass composite created
+2026-02-08 00:13:47,009 | INFO | 📊 Biomass Mean=0.0135, Max=0.0614
+2026-02-08 00:13:48,371 | INFO | 🗺️ Biomass map exported
+2026-02-08 00:13:48,396 | INFO | 📂 Training samples: 73
+2026-02-08 00:13:49,123 | INFO | ✅ Validation (5-fold CV): RMSE=0.0012, MAE=0.0008, R²=0.972
+2026-02-08 00:13:49,170 | INFO | ✅ Biomass model trained
+2026-02-08 00:13:49,171 | INFO | 📈 Training RMSE=0.0005, R²=0.995
+2026-02-08 00:13:49,172 | INFO | 🌱 Biomass index = 0.0045 ± 0.0012
+2026-02-08 00:13:49,219 | INFO | 🗺️ Biomass uncertainty map saved
+2026-02-08 00:13:49,220 | INFO | 🗂️ Metadata saved
+2026-02-08 00:13:49,220 | INFO | ✅ AI BIOMASS PIPELINE COMPLETE
+2026-02-08 00:22:06,412 | INFO | 📌 Logging initialized
+2026-02-08 00:22:07,685 | INFO | 🌍 Google Earth Engine initialized
+2026-02-08 00:22:07,686 | INFO | 📍 Town-level AOI defined (Witzenhausen)
+2026-02-08 00:22:07,690 | INFO | 🌱 Growing-season biomass composite created
+2026-02-08 00:22:11,268 | INFO | 📊 Biomass Mean=0.0148, Max=0.0646
+2026-02-08 00:22:12,396 | INFO | 🗺️ Growing-season biomass map exported
+2026-02-08 00:22:12,427 | INFO | 📂 Training samples: 73
+2026-02-08 00:22:13,144 | INFO | ✅ Validation (5-fold CV): RMSE=0.0012, MAE=0.0008, R²=0.972
+2026-02-08 00:22:13,191 | INFO | ✅ Biomass model trained
+2026-02-08 00:22:13,192 | INFO | 📈 Training RMSE=0.0005, R²=0.995
+2026-02-08 00:22:13,193 | INFO | 🌱 Biomass index = 0.0045 ± 0.0012
+2026-02-08 00:22:13,237 | INFO | 🗺️ Biomass uncertainty map saved
+2026-02-08 00:22:13,237 | INFO | 🗂️ Metadata saved
+2026-02-08 00:22:13,237 | INFO | ✅ AI BIOMASS PIPELINE COMPLETE (GROWING SEASON)
+2026-02-08 00:26:40,499 | INFO | 📌 Logging initialized
+2026-02-08 00:26:41,757 | INFO | 🌍 Google Earth Engine initialized
+2026-02-08 00:26:41,757 | INFO | 📍 AOI defined: Hessen (ADM1)
+2026-02-08 00:26:41,762 | INFO | 🌱 Growing-season biomass composite created
+2026-02-08 00:29:22,047 | INFO | 📌 Logging initialized
+2026-02-08 00:29:23,263 | INFO | 🌍 Google Earth Engine initialized
+2026-02-08 00:29:23,264 | INFO | 📍 AOI defined: Hessen (ADM1)
+2026-02-08 00:29:23,267 | INFO | 🌱 Growing-season biomass composite created
+2026-02-08 00:29:23,807 | INFO | 🗺️ Growing-season biomass map exported
+2026-02-08 00:29:23,834 | INFO | 📂 Training samples: 73
+2026-02-08 00:29:24,318 | INFO | ✅ Validation (5-fold CV): RMSE=0.0012, R²=0.972
+2026-02-08 00:29:24,366 | INFO | ✅ Biomass model trained
+2026-02-08 00:29:24,367 | INFO | 📈 Training RMSE=0.0005, R²=0.995
+2026-02-08 00:29:24,368 | INFO | 🌱 Hessen biomass index = 0.0045 ± 0.0012
+2026-02-08 00:29:24,389 | INFO | GDAL signalled an error: err_no=4, msg='/Users/afriyie/Downloads/AI_Crop_Yield_Prediction_Systems-main/AI_Crop_Yield_Prediction_Systems/output/Biomass_Map_Hessen_GrowingSeason.tif: No such file or directory'
+2026-02-08 00:33:19,147 | INFO | 📌 Logging initialized
+2026-02-08 00:33:20,353 | INFO | 🌍 Google Earth Engine initialized
+2026-02-08 00:33:20,354 | INFO | 📍 Town-level AOI defined (Witzenhausen)
+2026-02-08 00:33:20,358 | INFO | 🌱 Growing-season biomass composite created
+2026-02-08 00:33:21,449 | INFO | 📊 Biomass Mean=0.0148, Max=0.0646
+2026-02-08 00:33:23,015 | INFO | 🗺️ Growing-season biomass map exported
+2026-02-08 00:33:23,044 | INFO | 📂 Training samples: 73
+2026-02-08 00:33:23,793 | INFO | ✅ Validation (5-fold CV): RMSE=0.0012, MAE=0.0008, R²=0.972
+2026-02-08 00:33:23,840 | INFO | ✅ Biomass model trained
+2026-02-08 00:33:23,841 | INFO | 📈 Training RMSE=0.0005, R²=0.995
+2026-02-08 00:33:23,842 | INFO | 🌱 Biomass index = 0.0045 ± 0.0012
+2026-02-08 00:33:23,888 | INFO | 🗺️ Biomass uncertainty map saved
+2026-02-08 00:33:23,888 | INFO | 🗂️ Metadata saved
+2026-02-08 00:33:23,888 | INFO | ✅ AI BIOMASS PIPELINE COMPLETE (GROWING SEASON)
+2026-02-08 03:03:13,347 | INFO | 📌 Logging initialized
+2026-02-08 03:03:15,010 | INFO | 🌍 Google Earth Engine initialized
+2026-02-08 03:03:15,011 | INFO | 📍 Town-level AOI defined (Witzenhausen)
+2026-02-08 03:03:15,013 | INFO | 🌱 Growing-season biomass composite created
+2026-02-08 03:03:16,428 | INFO | 📊 Biomass Mean=0.0042, Max=0.0129
+2026-02-08 03:03:17,481 | INFO | 🗺️ Growing-season biomass map exported
