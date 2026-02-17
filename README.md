@@ -1,4 +1,5 @@
-# 🌾 AI Crop Yield Prediction System  
+# 🌾 Cloud-Resilient Crop Yield Prediction
+
 **Satellite-Driven, Cloud-Safe, Industry-Ready Machine Learning for Yield Forecasting**
 
 *Remote Sensing × Machine Learning × Google Earth Engine*
