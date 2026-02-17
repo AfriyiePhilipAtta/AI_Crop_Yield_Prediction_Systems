@@ -2,7 +2,7 @@
 
 ## 🌍 Overview
 
-A dual-model machine learning pipeline for predicting crop yields using fused Sentinel-2 (optical) and Sentinel-1 (SAR) satellite imagery, combined with environmental variables. The system integrates Google Earth Engine (GEE) for satellite data retrieval, Kalman filtering for image fusion, and XGBoost for yield prediction — producing both plot-level yield estimates and pixel-by-pixel spatial yield maps.
+A dual-model machine learning pipeline for predicting crop yields using fused Sentinel-2 (optical) and Sentinel-1 (SAR) satellite imagery, combined with environmental variables. The system integrates Google Earth Engine (GEE) for satellite data retrieval, Kalman filtering for image fusion, and XGBoost for yield prediction, producing both plot-level yield estimates and pixel-by-pixel spatial yield maps.
 
 ---
 
