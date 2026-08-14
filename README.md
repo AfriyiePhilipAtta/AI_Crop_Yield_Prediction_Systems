@@ -133,7 +133,7 @@ The Late stage achieves the best validation performance (Val R² = 0.172, Val RM
 
 ## 🗺️ Spatial Yield Maps (Model 2)
 
-### All Stages — Side-by-Side Comparison (Common Colour Scale)
+### All Stages 
 
 The three yield maps below are rendered on the same colour scale (0.9–1.5 t/ha) to allow direct visual comparison of predicted within-field yield variability across growth stages.
 
