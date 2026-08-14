@@ -75,7 +75,7 @@ The figure below compares raw Sentinel-2 NDVI (left column) against Kalman-fused
 
 ---
 
-## 📊 Results Summary (from latest run)
+## 📊 Results Summary 
 
 ### 🏆 Best Stage: **LATE**
 
@@ -117,13 +117,13 @@ The figure below compares raw Sentinel-2 NDVI (left column) against Kalman-fused
 
 ## 🎯 Validation — Predicted vs Observed
 
-### All Growth Stages (Multi-Panel)
+### All Growth Stages 
 
 The scatter plots below show predicted vs reported yield (t/ha) for all 28 plots across each growth stage. The diagonal line represents perfect prediction (1:1). Points above the line indicate underprediction; points below indicate overprediction.
 
 <img src="output_dfh/Predicted_vs_Observed_3STAGES_multipanel.png" width="800" alt="Predicted vs Observed — All Three Growth Stages"/>
 
-### Best Stage — LATE (Single Panel)
+### Best Stage — LATE 
 
 The Late stage achieves the best validation performance (Val R² = 0.172, Val RMSE = 1.186 t/ha). The large train–val R² gap (Train R² = 0.709 vs Val R² = 0.172) indicates overfitting consistent with the small sample size (n=28 plots).
 
