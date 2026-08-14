@@ -38,7 +38,7 @@ STAGES = {
 S1_SPECKLE_VAR = 0.05 ** 2   # assumed S1 noise variance
 
 # ============================================================
-# LOAD & FIX SHAPEFILE
+# LOAD SHAPEFILE
 # ============================================================
 gdf = gpd.read_file(PLOT_SHP)
 gdf["geometry"] = gdf["geometry"].buffer(0)
